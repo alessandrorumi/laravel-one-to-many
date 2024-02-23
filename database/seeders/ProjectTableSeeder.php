@@ -15,6 +15,8 @@ class ProjectTableSeeder extends Seeder
      *
      * @return void
      */
+
+    // 100 Projects in Ordine Random
     public function run()
     {
         Project::factory()
@@ -28,4 +30,20 @@ class ProjectTableSeeder extends Seeder
                 $project -> save();
                 });
     }
+
+    // 10 Projects per ogni Type
+    // public function run()
+    // {
+    //     $types = Type::all();
+
+    //     $types->each(function($type) {
+    //         Project::factory()
+    //             ->count(10) // Creiamo 10 progetti per ogni tipo
+    //             ->make()
+    //             ->each(function($project) use ($type) {
+    //                 $project->type()->associate($type);
+    //                 $project->save();
+    //             });
+    //     });
+    // }
 }
